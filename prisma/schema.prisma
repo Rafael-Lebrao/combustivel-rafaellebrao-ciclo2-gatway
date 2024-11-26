@@ -1,0 +1,14 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model bd_combustivel {
+  combustivel_id    Int      @id @default(autoincrement())
+  combustivel_nome  String?  @db.VarChar(45)
+  combustivel_preco Decimal? @db.Decimal(10, 2)
+}
