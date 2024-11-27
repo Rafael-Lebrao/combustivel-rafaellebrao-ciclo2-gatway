@@ -9,13 +9,13 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], useRemoteConfigs:[[url: 'https://github.com/Rafael-Lebrao/combustivel-rafaellebrao-ciclo2-gatway.git']]])
             }
         }
-        //stage('Instalar Dependências') {
-        //    steps {
-        //        sh 'node -v'
-        //        sh 'npm install'
-        //        sh 'npm run build'
-        //    }
-        //}
+        stage('Instalar Dependências') {
+            steps {
+                bat 'node -v'
+                bat 'npm install'
+                bat 'npm run build'
+            }
+        }
         stage('Construir Imagem Docker') {
             steps {
                 script {
