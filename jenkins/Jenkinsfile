@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Verificar Repositório') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], useRemoteConfigs:[[url: 'https://github.com/adssenacgit/arquivosBackendNest.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], useRemoteConfigs:[[url: 'https://github.com/Rafael-Lebrao/combustivel-rafaellebrao-ciclo2-gatway.git']]])
             }
         }
         //stage('Instalar Dependências') {
